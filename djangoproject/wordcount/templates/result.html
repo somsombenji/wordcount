@@ -1,16 +1,76 @@
+<!DOCTYPE html>
 <html>
-<h1>당신이 입력한 텍스트는 {{total}}로 구성되어있습니다.</h1>
-
-<a href="{% url 'home'%}">홈으로 돌아가기</a>
-<br>
-<h2>입력한 텍스트 : </h2>
-{{full}}
-
-<h2>단어 카운트 : </h2>
-
-{% for word, howmany in dictionary %}
-{{word}} : {{howmany}}
-<br>
-{%endfor%}
+    <head>
+        <title>텍스트 분석 결과</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            @font-face
+             {
+                font-family: 'GmarketSansMedium';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+            }
+            .result {
+                width: 800px;
+                overflow: auto;
+                border: 7px solid #E8D9FF;
+                background-color: #FAE0D4;
+                margin-top: 10px;
+            }
+            p {
+                font-size: 50px;
+                font-weight: bold;
+                border-bottom: 5px dashed #E8D9FF;
+            }
+            body {
+                font-family: "GmarketSansMedium";
+                background-size: 1000px;
+                background-image: url(https://images.unsplash.com/photo-1519750783826-e2420f4d687f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);
+            }
+            .content {
+                width: 600px;
+                height: 300px;
+                overflow: auto;
+                border-bottom: 5px dashed #724C00;
+                padding-top: 5px;
+            }
+            .back {
+                width: 800px;
+                height: 50px;
+                margin : 30px;
+                background-color: white;
+                border: 5px solid #FFE08C;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div class="back">
+            이전 화면으로 가려면 <a class="btn btn-outline-secondary" href="{%url 'home'%}" role="button">WORD COUNTER</a>
+        </div>
+        <div class="result"><p class="headline">분석 결과</p>
+            <span class="s1">
+                <h2>당신이 입력한 텍스트는 {{wordnum}}개의 <br>단어로 구성되어 있습니다.</h2>
+            </span>
+            <br>
+            
+                <h2>입력한 텍스트 : </h2>
+            <div class="content">
+                {{all}}
+            </div><br><br>
+            <span class="s3">
+                <h2>단어 카운트 : </h2>
+            </span>
+            {% for word, howmany in dictionary %}
+            {{word}} : {{howmany}}
+            <br>
+            {%endfor%}
+            <br><br>
+        </div>
+        <br><br>
+        
+    </center>
+    </body>
 
 </html>

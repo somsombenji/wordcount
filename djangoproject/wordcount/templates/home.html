@@ -1,8 +1,73 @@
-<h1>안녕하세요 여기서 열심히 글자를 세세요!</h1>
-
-<a href="{%url 'about'%}">About</a>
-<br>
-<form action="{%url 'result'%}">
-    <textarea cols="40" rows="30" name="fulltext"></textarea>
-    <input type="submit" value="Count!">
-</form>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Word counter</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            @font-face {
+                font-family: 'GmarketSansMedium';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+                font-weight: normal; font-style: normal;
+        }
+            .top {
+                width: 99%;
+                height: 100px;
+                border: 9px solid #E8D9FF;
+                padding: 15px;
+                margin-top: 10px;
+                font-family: "GmarketSansMedium";
+            }
+            body {
+                background-color: #FFF2E6;
+            }
+            .textarea {
+                width: 1000px;
+                height: 550px;
+                margin: 20px;
+                padding-top: 20px;
+                border : 6px solid #FAECC5;
+                border-radius: 30px;
+            }
+            .information {
+                width: 30%;
+                height: 50px;
+                border-bottom: 7px dashed #FFE08C;
+                font-family: "GmarketSansMedium";
+                font-size: 20px;
+            }
+            span {
+                font-family: "GmarketSansMedium";
+            }
+            footer {
+                margin: 20px 30px;
+                font-family: "GmarketSansMedium";
+            }
+        </style>
+    </head>
+    <boby class="home">
+        <center>
+        <header>
+            <div class="top"><h1>WORD COUNTER</h1></div>
+        </header>
+        <section><br>
+            <div class="information">
+                이 페이지에 대해 알고 싶다면? &nbsp; <a class="btn btn-outline-secondary" href="{%url 'about'%}">About</a>
+            </div>
+            <div>
+            <form action="{%url 'result'%}">
+                <div class="textarea">
+                    <span>입력창: </span><br>
+                    <textarea cols="100" rows="20" name="fulltext" placeholder="이곳에 글을 입력하세요."></textarea>
+                </div>
+                    <br>
+                    <input type="submit" value="Count!"> &nbsp; 
+                    <input type="reset" value="Reset">
+            </form>
+        </section>
+        </center>
+        <hr>
+        <footer>
+            <h6>만든이 : 김세정 / 만든 날짜 : 20.05.03.</h6>
+        </footer>
+    </boby>
+</html>

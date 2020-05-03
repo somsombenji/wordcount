@@ -1,3 +1,47 @@
-<h1>안녕</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>설명</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+             @font-face {
+                font-family: 'GmarketSansMedium';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+                font-weight: normal; font-style: normal;
+            }
+            body {
+                background-color: #FFF2E6;
+            }
+            .menuscripts {
+                width : 500px;
+                overflow: auto;
+                font-family: "GmarketSansMedium";
+                border: 7px dashed #FFE08C;
+            }
+            .headline {
+                margin: 30px;
+            }
+            span {
+                color: #F15F5F;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div class="headline">
+            <h1><span>WORD COUNTER</span>란?</h1>
+        </div>
+        <br><br>
+        <div class="menuscripts">
+            WORD COUNT는 당신이 입력한 텍스트가<br>
+            총 몇 개의 단어로 구성되어 있는지,<br>
+            각 단어가 몇 번 나왔는지를 알려주는 페이지입니다.<br><br>
+            홈 화면으로 돌아가서 텍스트를 입력해보세요!
+        </div>
+        <br><br>
+        <a class="btn btn-outline-secondary" href="{%url 'home'%}" role="button">WORD COUNTER</a>
+    </center>
+    </body>
+</html>
 
-<a href="{%url 'home'%}">홈으로 돌아가기</a>
+
